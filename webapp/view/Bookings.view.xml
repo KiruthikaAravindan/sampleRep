@@ -1,0 +1,15 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.alj.ALJ.controller.Bookings"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<VBox class="sapUiSmallMarginTop">
+		<Label text="Service Type" class="aljTitleClass sapUiSmallMarginBegin"/>
+		<HBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
+			<ToggleButton text="Ongoing" class="aljTBStyle sapUiTinyMarginEnd"/>
+			<ToggleButton text="Past" class="aljTBStyle sapUiTinyMarginEnd"/>
+			<ToggleButton text="Upcoming" class="aljTBStyle" pressed="true"/>
+		</HBox>
+		<VBox class="aljBoxStyle">
+			<Label text="Upcoming Services" class="aljTitleClass sapUiSmallMarginBegin"/>
+			<core:Fragment fragmentName="com.alj.ALJ.fragment.ServiceHistory" type="XML"/>
+		</VBox>
+	</VBox>
+</mvc:View>

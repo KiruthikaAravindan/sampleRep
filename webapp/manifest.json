@@ -1,0 +1,124 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "com.alj.ALJ",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"flexEnabled": false,
+		"rootView": {
+			"viewName": "com.alj.ALJ.view.App",
+			"type": "XML",
+			"async": true,
+			"id": "App"
+		},
+		"dependencies": {
+			"minUI5Version": "1.65.6",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "com.alj.ALJ.i18n.i18n"
+				}
+			},
+			"oAppModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "com.alj.ALJ.view",
+				"controlAggregation": "content",
+				"controlId": "page",
+				"clearControlAggregation": true
+			},
+			"routes": [
+				{
+					"name": "RouteHome",
+					"pattern": "RouteHome",
+					"target": [
+						"TargetHome"
+					]
+				},
+				{
+					"name": "Bookings",
+					"pattern": "Bookings",
+					"target": [
+						"Bookings"
+					]
+				},
+				{
+					"name": "MyCars",
+					"pattern": "MyCars",
+					"target": [
+						"MyCars"
+					]
+				}
+			],
+			"targets": {
+				"TargetHome": {
+					"viewType": "XML",
+					"viewName": "Home"
+				},
+				"App": {
+					"viewType": "XML",
+					"viewName": "App"
+				},
+				"Bookings": {
+					"viewType": "XML",
+					"viewName": "Bookings"
+				},
+				"MyCars": {
+					"viewType": "XML",
+					"viewName": "MyCars"
+				}
+			}
+		}
+	}
+}
